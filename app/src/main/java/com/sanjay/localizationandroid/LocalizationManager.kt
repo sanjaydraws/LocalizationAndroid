@@ -1,6 +1,7 @@
 package com.sanjay.localizationandroid
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Build
 import com.sanjay.localizationandroid.SharedPreferencesHelper.set
@@ -17,25 +18,34 @@ object LocalizationManager {
     var mArabicFlag = "ar"
 
 
+    var mSharedPreference: SharedPreferences? = null
+
     fun setLocale(context: Context?): Context? {
-        return updateResources(context, getCurrentLanguage(context))
+        return updateResources(context, getCurrentLanguage(context)?:"")
     }
 
-    inline fun setNewLocale(context: Context?, language: String){
+    fun setNewLocale(context: Context?, language: String){
         setCurrentLanguage(context, language)
-         updateResources(context, language)
+        updateResources(context, language)
     }
 
     fun getCurrentLanguage(context: Context?): String? {
-       return SharedPreferencesHelper.customSharedPref(context)?.getString(Constants.SELECTED_LANGUAGE,null)
+        if (mSharedPreference == null)
+            mSharedPreference = SharedPreferencesHelper.customSharedPref(context)
+
+        return mSharedPreference?.getString(Constants.SELECTED_LANGUAGE,null)
     }
     fun setCurrentLanguage(context: Context?,language:String?){
-        SharedPreferencesHelper.customSharedPref(context)?.set(Constants.SELECTED_LANGUAGE,language)
+        if (mSharedPreference == null)
+            mSharedPreference = SharedPreferencesHelper.customSharedPref(context)
+        mSharedPreference?.set(Constants.SELECTED_LANGUAGE,language)
     }
 
     fun updateResources(context: Context?,language: String?):Context?{
         var contextFun = context
         val locale = Locale(language)
+        Locale.setDefault(locale)
+
         val resources = context?.resources
         var configuration = Configuration(resources?.configuration)
         configuration.setLocale(locale)
