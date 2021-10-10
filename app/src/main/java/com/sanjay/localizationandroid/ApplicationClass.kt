@@ -25,7 +25,7 @@ open class ApplicationClass:Application (){
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         LocalizationManager.setLocale(this)
-        Log.d(Constants.ON_CONFIGURATION_CHANGED, "onConfigurationChanged: " + newConfig.locale.getLanguage())
+        Log.d(Constants.ON_CONFIGURATION_CHANGED, "onConfigurationChanged: " + newConfig.locale.language)
 
     }
 

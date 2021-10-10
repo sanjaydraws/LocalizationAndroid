@@ -40,27 +40,25 @@ class MainActivity : BaseActivity() {
 
     override fun setupListener() {
         binding?.arabic?.setOnClickListener {
-          val mCurrentLanguage =   LocalizationManager.getCurrentLanguage(this.applicationContext)
-            if(mCurrentLanguage == LocalizationManager.mArabicFlag){
-                LocalizationManager.setNewLocale(this.applicationContext, LocalizationManager.mEnglishFlag)
-            }else if(mCurrentLanguage == LocalizationManager.mEnglishFlag){
-                LocalizationManager.setNewLocale(this.applicationContext, LocalizationManager.mArabicFlag)
-            }else{
-                LocalizationManager.setNewLocale(this.applicationContext, LocalizationManager.mArabicFlag)
-            }
+            LocalizationManager.setNewLocale(this.applicationContext, LocalizationManager.mArabicFlag)
             this.recreate() //recreate activity
         }
         binding?.english?.setOnClickListener {
-            val mCurrentLanguage =   LocalizationManager.getCurrentLanguage(this.applicationContext)
-            if(mCurrentLanguage == LocalizationManager.mArabicFlag){
-                LocalizationManager.setNewLocale(this.applicationContext, LocalizationManager.mEnglishFlag)
-            }else if(mCurrentLanguage == LocalizationManager.mEnglishFlag){
-                LocalizationManager.setNewLocale(this.applicationContext, LocalizationManager.mArabicFlag)
-            }else{
-                LocalizationManager.setNewLocale(this.applicationContext, LocalizationManager.mArabicFlag)
-            }
+            LocalizationManager.setNewLocale(this.applicationContext, LocalizationManager.mEnglishFlag)
             this.recreate() //recreate activity
         }
+
+//        binding?.english?.setOnClickListener {
+//            val mCurrentLanguage =   LocalizationManager.getCurrentLanguage(this.applicationContext)
+//            if(mCurrentLanguage == LocalizationManager.mArabicFlag){
+//                LocalizationManager.setNewLocale(this.applicationContext, LocalizationManager.mEnglishFlag)
+//            }else if(mCurrentLanguage == LocalizationManager.mEnglishFlag){
+//                LocalizationManager.setNewLocale(this.applicationContext, LocalizationManager.mArabicFlag)
+//            }else{
+//                LocalizationManager.setNewLocale(this.applicationContext, LocalizationManager.mArabicFlag)
+//            }
+//            this.recreate() //recreate activity
+//        }
     }
 
     override fun initObserver() {
