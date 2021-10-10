@@ -17,6 +17,15 @@ object LocalizationManager {
     var mArabicFlag = "ar"
 
 
+    fun setLocale(context: Context?): Context? {
+        return updateResources(context, getCurrentLanguage(context))
+    }
+
+    inline fun setNewLocale(context: Context?, language: String){
+        setCurrentLanguage(context, language)
+         updateResources(context, language)
+    }
+
     fun getCurrentLanguage(context: Context?): String? {
        return SharedPreferencesHelper.customSharedPref(context)?.getString(Constants.SELECTED_LANGUAGE,null)
     }
