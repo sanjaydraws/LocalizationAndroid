@@ -28,4 +28,5 @@ open class ApplicationClass:Application (){
         Log.d(Constants.ON_CONFIGURATION_CHANGED, "onConfigurationChanged: " + newConfig.locale.language)
 
     }
+
 }

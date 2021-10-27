@@ -32,9 +32,9 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initViews() {
-        binding?.currentLanguage?.text = LocalizationManager.getCurrentLanguage(this.applicationContext)
-        binding?.languageResult?.text = "${getString(R.string.meter_number)} ${getString(R.string.app_name)}" +
-                " " + "${getString(R.string.meter_number)} ${getString(R.string.howto_read_meter)}"
+        binding?.currentLanguage?.text = "current Language: ${LocalizationManager.getCurrentLanguage(this.applicationContext)}"
+        binding?.languageResult?.text = "${getString(R.string.meter_number)} \n ${getString(R.string.app_name)}" +
+                " " + "\n${getString(R.string.meter_number)} ${getString(R.string.howto_read_meter)}"
 
     }
 
@@ -45,6 +45,10 @@ class MainActivity : BaseActivity() {
         }
         binding?.english?.setOnClickListener {
             LocalizationManager.setNewLocale(this.applicationContext, LocalizationManager.mEnglishFlag)
+            this.recreate() //recreate activity
+        }
+        binding?.spanish?.setOnClickListener {
+            LocalizationManager.setNewLocale(this.applicationContext, LocalizationManager.mSpanishFlag)
             this.recreate() //recreate activity
         }
 

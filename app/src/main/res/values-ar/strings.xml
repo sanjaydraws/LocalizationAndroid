@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">تعريب Android</string>
+    <string name="app_name">تعريب ذكري المظهر</string>
     <string name="english">جليزي</string>
     <string name="meter_number">رقم  المرفق</string>
     <string name="meter_type">نوع العداد</string>
     <string name="howto_read_meter">كيف اقرا  العداد الخاص بي ؟</string>
     <string name="meter_last_reading_date">تاريخ اخر قراءة</string>
     <string name="meter_last_reading_count">اخر قراءة</string>
+    <string name="spanish">الأسبانية</string>
 
 </resources>

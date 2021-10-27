@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Localización de Android</string>
+    <string name="english">Inglés</string>
+    <string name="meter_number">Número de medidor</string>
+    <string name="meter_type">Tipo de medidor</string>
+    <string name="howto_read_meter">¿Cómo leo mi medidor?</string>
+    <string name="meter_last_reading_date">Fecha de última lectura</string>
+    <string name="meter_last_reading_count">Última lectura</string>
+    <string name="spanish">Español</string>
+
+</resources>

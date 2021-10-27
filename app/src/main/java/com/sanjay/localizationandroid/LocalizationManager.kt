@@ -16,6 +16,7 @@ object LocalizationManager {
 
     var mEnglishFlag = "en"
     var mArabicFlag = "ar"
+    var mSpanishFlag = "es"
 
 
     var mSharedPreference: SharedPreferences? = null
@@ -33,7 +34,7 @@ object LocalizationManager {
         if (mSharedPreference == null)
             mSharedPreference = SharedPreferencesHelper.customSharedPref(context)
 
-        return mSharedPreference?.getString(Constants.SELECTED_LANGUAGE,null)
+        return mSharedPreference?.getString(Constants.SELECTED_LANGUAGE, mEnglishFlag)
     }
     fun setCurrentLanguage(context: Context?,language:String?){
         if (mSharedPreference == null)
